@@ -1,0 +1,409 @@
+<!-- addForm.html -->
+
+<!-- "Join Team" (Post) Form -->
+
+<div class="col-xs-12">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Avances <span class="glyphicon glyphicon-map-marker"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body"  >
+
+            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+            <form name ="addForm" class = "form-inline" role = "form">
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+
+  <!-- *********************************************************************************************** -->
+              <div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+
+<div ng-controller="companias" class="form-group">
+  <label for="cia"> Compañias: </label>
+    <select name="cia" id="cia" ng-model="formData.cia" class="form-control">
+      <option ng-repeat="option in data.availableOptions"  value="{{option.id}}">{{option.name}}</option>
+    </select>
+</div>
+
+  <div class="form-group">
+      <label for="causadeclarada">Causa Declarada</label>
+      <input autocomplete="off" type="text" class="form-control"  id="causadeclarada"  ng-model="formData.causadeclarada" >
+      <span ng-show=" addForm.formData.causadeclarada.$invalid">The name is required.</span>
+  </div>
+
+  <div class="form-group" ng-controller="tiposiniestro">
+  <label for="tiposiniestro">Tipo de siniestro</label>
+  <select name="tiposiniestro" id="tiposiniestro" ng-model="formData.tiposiniestro" class="form-control">
+    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+  </select>
+
+</div>
+</div>
+
+  <div class = "row">
+    <label></label>
+    </div>
+
+
+    <div class="w3-container w3-section w3-padding-8 w3-orange">
+
+      <div class="form-group">
+          <label for="fechaencargo">Fecha encargo</label>
+         <ng-datepicker type="text" id="fechaencargo"  format="DD.MM.YYYY" view-format="DD.MM.YYYY"  ng-model="formData.fechaencargo" > </ng-datepicker>
+
+
+      </div>
+      <div class="form-group">
+          <label for="fechacontacto">Fecha contacto</label>
+         <ng-datepicker type="text"   id="fechacontacto"  format="DD.MM.YYYY" view-format="DD.MM.YYYY"  ng-model="formData.fechacontacto" > </ng-datepicker>
+
+      </div>
+      <div class="form-group">
+          <label for="fechavisita">Fecha visita</label>
+           <ng-datepicker  type="text"   id="fechavisita"  format="DD.MM.YYYY" view-format="DD.MM.YYYY"  ng-model="formData.fechavisita" > <ng-datepicker>
+
+      </div>
+
+      <div class="form-group">
+          <label for="horavisita">Hora visita</label>
+      <input type="text" name="hora"  ng-model="formData.horavisita" placeholder="HH:mm" ng-init=""></input>
+
+      </div>
+
+      <div class="row">
+        <label></label>
+        </div>
+
+    <div class="form-group">
+        <label for="danos">Aparato</label>
+        <input autocomplete="off" type="text" class="form-control"  id="daños"  ng-model="formData.danos" required>
+
+    </div>
+    <div class="form-group">
+        <label for="causa">Que daños causa</label>
+        <input autocomplete="off" type="text" class="form-control"  id="causa"  ng-model="formData.causa" required>
+
+  </div>
+
+  <div class="form-group">
+      <label for="origen">Causante</label>
+      <input autocomplete="off" type="text" class="form-control"  id="origen"  ng-model="formData.origen" required>
+
+  </div>
+</div>
+
+
+  <div class="row">
+    <label></label>
+    </div>
+
+    <div class="w3-container w3-section w3-padding-8 w3-orange">
+
+        <div class="form-group" ng-controller="vivienda">
+        <label for="vivienda">Tipo de riesgo</label>
+        <select name="vivienda" id="vivienda" ng-model="formData.vivienda" class="form-control">
+          <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group" ng-controller="ubicacion">
+      <label for="ubicacion">Ubicación</label>
+      <select name="ubicacion" id="ubicacion" ng-model="formData.ubicacion" class="form-control">
+        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+      </select>
+    </div>
+
+
+      <div class="form-group"  ng-controller="asegur" >
+      <label for="asegur">Asegurado/Asegurada</label>
+      <select name="asegur" id="asegur" ng-model="formData.asegur" class="form-control">
+        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+      </select>
+
+    </div>
+    <div class="form-group" ng-controller="don">
+    <label for="don">Don/Dña</label>
+    <select name="don" id="don" ng-model="formData.don" class="form-control">
+      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+    </select>
+
+  </div>
+  <div class="row">
+  <label></label>
+  </div>
+
+  <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input autocomplete="off" type="text"  id="origen"  ng-model="formData.nombre" >
+            </div>
+
+  </div>
+
+
+    <div class="row">
+    <label></label>
+    </div>
+
+    <div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+
+                          <div class="form-group" >
+                          <label for="circunstancias2">Circunstancias</label>
+                            <textarea autocomplete="off" type="text" class="form-control"  id="daños"  ng-model="formData.circunstancias2" cols="100" rows="5" ></textarea>
+                          </select>
+
+                        </div>
+
+                        <div class="row">
+                        <label></label>
+                      </div>
+
+
+</div>
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+
+  <div class="form-group" ng-controller="frases_reclama1">
+  <label for="frases_reclama1">Frase reclamación cuadro eléctrico</label>
+  <select name="frases_reclama1" id="frases_reclama1" ng-model="formData.frases_reclama1" class="form-control">
+    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+  </select>
+</div>
+<div class="form-group" ng-controller="frases_reclama2">
+<label for="frases_reclama2">Causa efecto </label>
+<select name="frases_reclama2" id="frases_reclama2" ng-model="formData.frases_reclama2" class="form-control">
+  <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+</select>
+</div>
+<div class="form-group" ng-controller="frases_reclama3">
+<label for="frases_reclama3">Ley de Lenz</label>
+<select name="frases_reclama3" id="frases_reclama3" ng-model="formData.frases_reclama3" class="form-control">
+  <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+</select>
+</div>
+
+</div>
+
+
+
+<div class="row">
+<label></label>
+</div>
+
+
+<div class="row">
+<label></label>
+</div>
+
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+                      <div class="form-group" ng-controller="pieza">
+                      <label for="pieza">Reclamación de daños</label>
+                      <select name="pieza" id="pieza" ng-model="formData.pieza" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                                  <label for="circunstancias4">Datos del perjudicado</label>
+                                  <input type="checkbox" ng-model="formData.circunstancias4">
+                              </div>
+
+
+
+</div>
+<div class="row">
+<label></label>
+</div>
+
+
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+  <div class="form-group" ng-controller="vivienda">
+  <label for="vivienda">Tipo de riesgo</label>
+  <select name="vivienda" id="vivienda" ng-model="formData.vivienda2" class="form-control">
+    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+  </select>
+</div>
+
+
+                      <div class="form-group" ng-controller="utilidad">
+                      <label for="utilidad">Utilidad</label>
+                      <select name="utilidad" id="utilidad" ng-model="formData.utilidad" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group" ng-controller="protecciones">
+                    <label for="protecciones">Protecciones</label>
+                    <select name="protecciones" id="protecciones" ng-model="formData.protecciones" class="form-control">
+                      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+
+                    </div>
+
+                    <div class="form-group" ng-controller="construccion">
+                    <label for="construccion">Tipo de construcción</label>
+                    <select name="construccion" id="construccion" ng-model="formData.construccion" class="form-control">
+                      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+                  </div>
+
+                  <div class="row">
+                  <label></label>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="antiguedad">Antiguedad </label>
+                  <input autocomplete="off" name=antiguedad class="form-control"  id="antiguedad"  ng-model="formData.antiguedad"  type="text"  >
+                  </div>
+
+</div>
+<div class="row">
+<label></label>
+</div>
+
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+                      <div class="form-group" ng-controller="estado">
+                      <label for="estado">Estado de la construcción</label>
+                      <select name="estado" id="estado" ng-model="formData.estado" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                                  <label for="superficie">Superficie</label>
+                                  <input autocomplete="off" name=superficie class="form-control"  id="superficie"  ng-model="formData.superficie"  type="number"  >
+                              </div>
+                              <div class="form-group">
+                                  <label for="recomendaciones">Recomendaciones</label>
+                                  <input autocomplete="off" name=recomendaciones class="form-control"  id="recomendaciones"  ng-model="formData.recomendaciones"  type="text"  >
+                              </div>
+
+
+</div>
+
+<div class="row">
+<label></label>
+</div>
+
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+                      <div class="form-group" ng-controller="garantia1">
+                      <label for="garantia1">Contenido</label>
+                      <select name="garantia1" id="garantia1" ng-model="formData.garantia1" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                    <label for="capitalPreexistencia">Capital Asegurado</label>
+                      <input name="capitalAsegurado" ng-model="formData.capitalAsegurado" id="capìtalAsegurado" type = "text">
+
+                    </input>
+
+                    </div>
+
+                      <div class="form-group">
+                      <label for="capitalPreexistencia">Capital Preexistencia</label>
+                      <input name="capitalPreexitencia" ng-model="formData.capitalPreexistencia" id="capitalPreexistencia" type = "text">
+
+                    </input>
+
+
+</div>
+</div>
+
+<div class="row">
+<label></label>
+</div>
+
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+                      <div class="form-group" ng-controller="garantia2">
+                      <label for="garantia2">Continente</label>
+                      <select name="garantia2" id="garantia2" ng-model="formData.garantia2" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                    <label for="capitalAsegurado2">Capital Asegurado</label>
+                    <input name="capitalAsegurado2" ng-model="formData.capitalAsegurado2" id="capìtalAsegurado2" type = "text">
+                    </input>
+
+                    </div>
+                   <div class="form-group">
+                <label for="valorm2">Valor m2</label>
+                <input name="valorm2" ng-model="formData.valorm2" id="valorm2" type = "number">
+
+                                                           </input>
+                                                         </div>
+
+
+                                                         </div>
+
+
+
+
+<div class="row">
+<label></label>
+</div>
+
+<div class="w3-container w3-section w3-padding-8 w3-orange">
+
+
+                      <div class="form-group" ng-controller="cobertura">
+                      <label for="cobertura">Cobertura?</label>
+                      <select name="cobertura" id="garantia2" ng-model="formData.cobertura" class="form-control">
+                        <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                      </select>
+
+                    </div>
+
+                    <div class="form-group" ng-controller="afecta">
+                    <label for="afecta">Contenido/Continente?</label>
+                    <select name="afecta" id="afecta" ng-model="formData.afecta" class="form-control">
+                      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+
+                  </div>
+                  <div class="form-group" ng-controller="alteracion">
+                  <label for="alteracion">Tipo de alteración</label>
+                  <select name="alteracion" id="alteracion" ng-model="formData.alteracion" class="form-control">
+                    <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                  </select>
+                </div>
+
+
+</div>
+</div>
+
+<div class="row">
+<label></label>
+</div>
+
+
+
+
+                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                    <button type="submit" class="btn btn-danger btn-block" ng-click= "createUser()" ng-disabled="addForm.$invalid" >Consultar</button>
+            </form>
+        </div>
+    </div>
+</div>

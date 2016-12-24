@@ -1,0 +1,57 @@
+<!-- addForm.html -->
+
+<!-- "Join Team" (Post) Form -->
+<div class="col-xs-12">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Avances <span class="glyphicon glyphicon-map-marker"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+
+            <p class="bg-muted1">1. Antecedentes</p>
+            <div><br></div>
+            <p class="bg-muted2">1.1.DEL ENCARGO</p>
+            <p class="bg-muted">A interés de la compañía {{params.cia}}, S.A, este gabinete y su perito firmante, actúan para realizar un informe pericial en base a la declaración manifestada, donde indican que ha sufrido “{{params.causadeclarada}}”.</p>
+            <p class="bg-muted2">1.2 CONTACTO</p>
+              <p class="bg-muted">Tras recibir encargo pericial con fecha {{params.fechaencargo}}, contacto telefónicamente {{params.fechacontacto}} con  {{params.asegur}} {{params.nombre}}, donde se ha producido el siniestro y me emplaza para realizar la visita el día {{params.fechavisita}} a las {{params.horavisita}} horas.</p>
+              <p class="bg-muted2">1.3 VISITA AL RIESGO</p>
+              <p class="bg-muted">Confirmándose el punto anterior, en fecha y hora acordada, visito el lugar del siniestro y de la inspección ocular sobre el siniestro se determina que nos encontramos ante un siniestro cuya naturaleza es {{params.tiposiniestro}}.</p>
+  <div><br></div>
+            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+
+            <p class="bg-muted1">2. Daños, causa y origen</p>
+  <div><br></div>
+            <p class="bg-muted2">2.1.DAÑOS</p>
+            <p class="bg-muted">Daños en {{params.danos}}</p>
+            <p class="bg-muted2">2.2.CAUSA</p>
+            <p class="bg-muted">{{params.causa}}</p>
+            <p class="bg-muted2">2.3.ORIGEN</p>
+            <p class="bg-muted">{{params.origen}}</p>
+
+              <div><br></div>
+
+                  <p class="bg-muted1">3. Circunstancias</p>
+  <div><br></div>
+              <p class="bg-muted"> Personado en el riesgo asegurado, se trata de {{params.vivienda}}, con buen estado de conservación y zona {{params.ubicacion}}, con los capitales contratados acordes a las preexistencias observadas, donde soy atendido por  {{params.asegur}} {{params.nombre}} , {{params.genero1}} cual me indica la ocurrencia del siniestro.</p>
+              <p class="bg-muted">  {{params.circunstancias2}}</p>
+              <p class="bg-muted">  {{params.frases_reclama1}}</p>
+              <p class="bg-muted">  {{params.frases_reclama2}}</p>
+              <p class="bg-muted">  {{params.frases_reclama3}}</p>
+
+  <div><br></div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
